@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    font-weight: $lightFontWeight;
+    
+}
+body {
+    overflow-x: hidden;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.gallery {        
+    display: flex;
+    width: 450px;
+    height: 100vh;
+    margin: auto;
+    flex-flow: column ;
+    justify-content: center;
+    align-content: center;
+    column-gap: 20px;
+    row-gap: 20px;
+    position: relative;
+    div {
+        border-radius: 10px;
+        &.main-slider {
+            img {
+                display: none;
+                &.active {
+                    display: block;
+                }
+            }
+        }
+        &.active{
+            border: 2px solid $mainColor;
+            transform: scale(1);
+            img{
+                opacity: .6;
+            }
+        }
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+    }
+    .slider-indicators {
+        display: flex;
+        column-gap: 15px;
+        justify-content: center;
+        div {
+            flex-basis: 16%;
+            cursor: pointer;
+        }
+    }
+    .close-icon {
+        position: absolute;
+        top: 10px;
+        right: 0;
+        cursor: pointer;
+    }
+    .nav {
+        position: absolute;
+        top: 40%;
+        background: none;
+        border: none;
+        outline: none;
+        background-color: $lightGrayishBlue;
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        text-align: center;
+        line-height: 50px;
+        border-radius: 50%;
+        color: $mainColor;
+        cursor: pointer;
+        &.nav-next {
+            right: -25px;
+        }
+        &.nav-prev {
+            left: -25px;
+        }
+        &:hover {
+            svg {
+                path {
+                    stroke: $mainColor;
+                }
+            }
+        }
+
+    }     
+    
+}
+.mobile-menue {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: -110%;
+    background-color: rgba(0,0,0,.5);
+    transition: left .3s ease-in-out;
+    display: none;
+    .menue {
+        background-color: $lightGrayishBlue;
+        width: 65%;
+        height: 100vh;
+        padding: 20px;
+        button {
+            background: none;
+            border: none;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 50px;
+            li {
+                margin: 20px 0;
+                a {
+                    font-weight: $StrongFontWeight;
+                    &:active , &:hover {
+                        color: $mainColor;
+                    }
+                }
+            }
+        }
+    }
+    &.active {
+        left: 0;
+    }
+}

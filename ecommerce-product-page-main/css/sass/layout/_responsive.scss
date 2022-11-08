@@ -1,0 +1,99 @@
+// start responsive design 
+@media screen and (max-width : $medium) {
+    header {
+        nav {
+            border-bottom: none;
+            padding-bottom: 0;
+            .brand {
+                ul {
+                    display: none;
+                }
+                button {
+                    display: inline;
+                }
+            }
+            .settings {
+                img {
+                    &.avatar {
+                        width: 30px;
+                        margin-left: 15px;
+                    }
+                }
+                .mo-drop-down {
+                    left: auto;
+                    right: 0;
+                    width: 350px;
+                    .card {
+                        .card-body {
+                            .item {
+                                column-gap: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .header-content {
+            margin: 17px 0;
+            .row {
+                .slider {
+                    padding: 0;
+                    .gallery {
+                        width: 100%;
+                        div {
+                            border-radius: 0;
+                            img {
+                                border-radius: 0;
+                            }
+                        }
+                        .slider-indicators {
+                            display: none;
+                        }
+                        .nav {
+                            display: block;
+                        }
+                    }
+                }
+                .details {
+                    h1 {
+                        font-size: 2em;
+                    }
+                    p {
+                        margin: 15px 0;
+                    }
+                    .cost {
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+                    .submit {
+                        flex-direction: column;
+                        row-gap: 10px;
+                        .purchase {
+                            flex-basis: auto;
+                        }
+                        .quantity {
+                            flex-basis: auto;
+                            input {
+                                padding: 10px 0;
+                                border-radius: 10px;
+                            }
+                            button{
+                                &.plus {
+                                    right: 15px;
+                                    
+                                }
+                                &.minus {
+                                    left: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }    
+    .mobile-menue {
+        display: block;
+    }
+}
